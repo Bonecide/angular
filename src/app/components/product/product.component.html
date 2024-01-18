@@ -1,0 +1,23 @@
+<div class="flex flex-col items-center gap-[20px] p-[20px] border">
+  <h1 class="text-center">{{ product.title }}</h1>
+  <img [src]="product.image" class="w-1/6" />
+  <p class="text-center">
+    Price: <span class="font-bold">{{ product.price | currency }}</span>
+  </p>
+
+  <button
+    (click)="changeDetails(!details)"
+    [ngClass]="{
+      'bg-yellow-400': !details,
+      'bg-blue-400 text-white': details
+    }"
+    class="border py-2 px-4 rounded bg-yellow-400 transition-all duration-300"
+  >
+    {{ details ? "Hide" : "Show" }} Details
+  </button>
+
+  <div *ngIf="details" class="flex flex-col gap-[20px] items-center">
+    <p class="text-center">{{ product.description }}</p>
+    <p>Rate : {{ product.rating.rate }}</p>
+  </div>
+</div>

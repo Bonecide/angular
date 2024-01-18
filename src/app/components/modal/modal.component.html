@@ -1,0 +1,13 @@
+<div
+  (click)="modalService.close()"
+  class="fixed w-full h-full bg-black/50 top-0 right-0 left-0 bottom-0 flex justify-center items-center cursor-pointer z-[9]"
+>
+  <div
+    click-stop-propagation
+    class="w-[500px] p-6 bg-white rounded-lg cursor-auto"
+  >
+    <h1 class="text-center mb-2 text-lg">{{ ModalTitle }}</h1>
+
+    <ng-content></ng-content>
+  </div>
+</div>
